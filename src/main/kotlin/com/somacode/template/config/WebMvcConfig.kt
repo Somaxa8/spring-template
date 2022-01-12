@@ -49,13 +49,6 @@ class WebMvcConfig: WebMvcConfigurer {
             val methodHttp = request.method
             val executionTime = (System.currentTimeMillis() - time).toInt()
             val content = "$methodHttp\t'$endpoint'\t in $executionTime ms"
-//            var ipAddress = request.getHeader("X-FORWARDED-FOR")
-//            if (ipAddress == null) {
-//                ipAddress = request.remoteAddr
-//            }
-//            request.getHeader("referer");
-//            request.getRemoteAddr();
-//            LogService.out.endpoint(content, executionTime, methodHttp, endpoint, ipAddress)
             println("$content -> ${response.status}")
         }
     }

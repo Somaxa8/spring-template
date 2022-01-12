@@ -11,7 +11,7 @@ class OAuthRefreshToken(
         @Column(name = "token_id")
         var tokenId: String? = null,
         @Lob
-        var token: Blob? = null,
+        var token: String? = null,
         @Lob
-        var authentication: Blob? = null
+        var authentication: String? = null
 )

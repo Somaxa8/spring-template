@@ -27,8 +27,8 @@ class SwaggerConfig {
     @Value("\${custom.protocol}") lateinit var protocol: String
 
     var web = "http://example:8080/"
-    var email = "admin@mercurio.com"
-    var name = "Mercurio"
+    var email = "admin@template.com"
+    var name = "Template"
     private val restPackage = SwaggerConfig::class.java.getPackage().name.substring(0, SwaggerConfig::class.java.getPackage().name.length - 6) + "controller"
 
 
@@ -37,11 +37,9 @@ class SwaggerConfig {
         return Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(
-                        Predicates.or( //                            RequestHandlerSelectors.withClassAnnotation(RestController.class),
-                                //                                RequestHandlerSelectors.basePackage(restPackage),
-//                                RequestHandlerSelectors.basePackage(restPackage),
-                                RequestHandlerSelectors.withClassAnnotation(RestController::class.java)
-                        )
+                    Predicates.or(
+                        RequestHandlerSelectors.withClassAnnotation(RestController::class.java)
+                    )
                 )
                 .paths(PathSelectors.any())
                 .build()

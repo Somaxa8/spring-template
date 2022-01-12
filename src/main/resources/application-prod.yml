@@ -1,7 +1,7 @@
 spring:
   datasource:
-    #        url: jdbc:mysql://localhost:3310/mercuriodb
-    #        password: 1234
+    url: jdbc:postgresql://localhost:5432/templatedb
+    password: 1234
   h2:
     console:
       enabled: true
@@ -20,5 +20,5 @@ custom:
   my-secret-token: my-secret-token
   access-token-validity: 50000
   refresh-token-validity: 50000
-  base-url: booksapi.somacode.org
+  base-url: tamplateapi.com
   protocol: https

@@ -10,7 +10,7 @@ class OAuthClientToken(
         @Column(name = "token_id")
         var tokenId: String? = null,
         @Lob
-        var token: Blob? = null,
+        var token: String? = null,
         @Id
         @Column(name = "authentication_id")
         var authenticationId: String? = null,

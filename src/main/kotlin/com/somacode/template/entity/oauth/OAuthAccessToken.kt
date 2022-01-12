@@ -1,7 +1,7 @@
 package com.somacode.template.entity.oauth
 
 import com.somacode.template.entity.User
-import java.sql.Blob
+import org.hibernate.annotations.GenericGenerator
 import javax.persistence.*
 
 @Entity
@@ -10,8 +10,9 @@ class OAuthAccessToken(
         @Column(name = "token_id")
         var tokenId: String? = null,
         @Lob
-        var token: Blob? = null,
-        @Id
+        var token: String? = null,
+        @Id @GeneratedValue(generator = "uuid")
+        @GenericGenerator(name = "uuid", strategy = "uuid2")
         @Column(name = "authentication_id", nullable = false)
         var authenticationId: String? = null,
         @OneToOne
@@ -20,7 +21,7 @@ class OAuthAccessToken(
         @Column(name = "client_id")
         var clientId: String? = null,
         @Lob
-        var authentication: Blob? = null,
+        var authentication: String? = null,
         @Column(name = "refresh_token")
         var refreshToken: String? = null
 )

@@ -1,4 +1,4 @@
-package com.lavamancer.mercurio.controller
+package com.somacode.template.controller
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -13,7 +13,7 @@ class WebController {
 
     @GetMapping("/")
     fun getIndex(): ResponseEntity<String> {
-        return ResponseEntity.status(HttpStatus.OK).body("Hello Mercurio")
+        return ResponseEntity.status(HttpStatus.OK).body("Hello World!")
     }
 
     @GetMapping("/login")

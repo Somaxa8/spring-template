@@ -6,7 +6,7 @@ import java.io.Serializable
 import javax.persistence.*
 
 @Entity
-@Table(uniqueConstraints = [UniqueConstraint(columnNames = [User_.EMAIL])])
+@Table(name = "_user", uniqueConstraints = [UniqueConstraint(columnNames = [User_.EMAIL])])
 class User(
         @Id @GeneratedValue
         var id: Long? = null,

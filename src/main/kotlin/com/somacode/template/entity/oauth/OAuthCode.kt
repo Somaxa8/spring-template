@@ -10,5 +10,5 @@ class OAuthCode(
         var id: Long? = null,
         var code: String? = null,
         @Lob
-        var authentication: Blob? = null
+        var authentication: String? = null
 )
